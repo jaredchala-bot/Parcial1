@@ -17,6 +17,10 @@ public class Trip {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToMany
+    @JoinColumn(name="driver_id",nullable = false)
+    private User user;
+
     private String routeId;
 
     private ZonedDateTime departureTime;
